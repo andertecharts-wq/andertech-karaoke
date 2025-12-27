@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Mapeando variáveis CSS caso precise usar fora do Tailwind */
+    --color-bg-main: #0a0a12;
+    --color-bg-secondary: #13131f;
+    --color-primary: #8b5cf6;
+    --color-secondary: #d946ef;
+  }
+
+  body {
+    @apply bg-bgMain text-white font-sans overflow-hidden antialiased;
+  }
+}
+
+/* Scrollbar Customizada */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-bgCard rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary;
+}
+
+/* Utilitários */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-br from-primary to-secondary;
+}
+
+.glass-panel {
+  @apply bg-bgCard/60 backdrop-blur-md border border-white/5;
+}
